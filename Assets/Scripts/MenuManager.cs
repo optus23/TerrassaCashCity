@@ -51,6 +51,7 @@ public class MenuManager : MonoBehaviour
     public Text nextEntry_txt;
     public Text podium_txt;
     public Text trash_txt;
+    public Text cook_txt;
 
     public float selected_balance;
     public string actual_trasher;
@@ -177,6 +178,7 @@ public class MenuManager : MonoBehaviour
         nextEntry_txt.text = ("Next Cash entry: " + next_cash_entry);
         podium_txt.text = ("Has to monetize next Payment: " + System.Environment.NewLine + "-" + actual_richer);
         trash_txt.text = ("Has to take out the Trash:  ") + System.Environment.NewLine + "-" + actual_trasher;
+        cook_txt.text = ("Has to serve cooking:  ") + System.Environment.NewLine + "-" + actual_trasher;
     }
 
     private bool CheckToRotateTrash(System.DateTime rotate_day)

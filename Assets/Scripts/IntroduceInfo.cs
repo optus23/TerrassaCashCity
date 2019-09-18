@@ -27,7 +27,11 @@ public class IntroduceInfo : MonoBehaviour
     void Start()
     {
         initial_position_x = Check.transform.position.x;
-        //ProductName[0] = PlayerPrefs.GetString("ProductName" + 0, "");
+        //PlayerPrefs.DeleteAll();
+
+       
+
+
     }
 
     // Update is called once per frame
@@ -56,15 +60,14 @@ public class IntroduceInfo : MonoBehaviour
         if(NameInput.text != "" && CostInput.text != "" && DateInput.text != "")
         {
             move_check = true;
-           // PlayerPrefs.SetInt("ProductName_count",0);
 
-            product_count =  PlayerPrefs.GetInt("ProductName_count", 0);         
-            //for (int i = 0; i < product_count; ++i)
-            //{
-            //    ProductName[i] = PlayerPrefs.GetString("ProductName" + i, "");
-            //    ProductCost[i] = PlayerPrefs.GetString("ProductCost" + i, "");
-            //    ProductDate[i] = PlayerPrefs.GetString("ProductDate" + i, "");
-            //}
+            product_count =  PlayerPrefs.GetInt("ProductName_count", 0);
+            for (int i = 0; i < product_count; ++i)
+            {
+                ProductName.Add(PlayerPrefs.GetString("ProductName" + (i), ""));
+                ProductCost.Add(PlayerPrefs.GetString("ProductCost" + (i), ""));
+                ProductDate.Add(PlayerPrefs.GetString("ProductDate" + (i), ""));
+            }
 
             ProductName.Add(NameInput.text);
             ProductCost.Add(CostInput.text);
@@ -72,15 +75,14 @@ public class IntroduceInfo : MonoBehaviour
 
             PlayerPrefs.SetInt("ProductName_count", ProductName.Count);
 
-            for (int i = 0; i< ProductName.Count; i++)
+            for (int i = 0; i < ProductName.Count; i++)
             {
                 PlayerPrefs.SetString("ProductName" + i, ProductName[i]);
                 PlayerPrefs.SetString("ProductCost" + i, ProductCost[i]);
                 PlayerPrefs.SetString("ProductDate" + i, ProductDate[i]);
             }
 
-            if(ProductName.Count > 2)
-                test.text = ProductName[0] + System.Environment.NewLine + ProductName[1] + System.Environment.NewLine + ProductName[2];
+
 
         }
     }
