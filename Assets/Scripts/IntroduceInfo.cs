@@ -13,6 +13,7 @@ public class IntroduceInfo : MonoBehaviour
     public List<string> ProductName = new List<string>();
     public List<string> ProductCost = new List<string>();
     public List<string> ProductDate = new List<string>();
+    public List<string> ProductPerson = new List<string>();
 
     public GameObject Check;
     public bool move_check;
@@ -26,12 +27,7 @@ public class IntroduceInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initial_position_x = Check.transform.position.x;
-        //PlayerPrefs.DeleteAll();
-
-       
-
-
+        initial_position_x = Check.transform.position.x;    
     }
 
     // Update is called once per frame
@@ -57,7 +53,7 @@ public class IntroduceInfo : MonoBehaviour
 
     public void Continue()
     {
-        if(NameInput.text != "" && CostInput.text != "" && DateInput.text != "")
+        if(NameInput.text != "Enter text..." && CostInput.text != "Enter text..." && DateInput.text != "(xx/yy/zzz)")
         {
             move_check = true;
 
@@ -67,11 +63,13 @@ public class IntroduceInfo : MonoBehaviour
                 ProductName.Add(PlayerPrefs.GetString("ProductName" + (i), ""));
                 ProductCost.Add(PlayerPrefs.GetString("ProductCost" + (i), ""));
                 ProductDate.Add(PlayerPrefs.GetString("ProductDate" + (i), ""));
+                ProductPerson.Add(PlayerPrefs.GetString("ProductPerson" + (i), ""));
             }
 
             ProductName.Add(NameInput.text);
             ProductCost.Add(CostInput.text);
             ProductDate.Add(DateInput.text);
+            ProductPerson.Add(SelectPerson.selected_person);
 
             PlayerPrefs.SetInt("ProductName_count", ProductName.Count);
 
@@ -80,10 +78,8 @@ public class IntroduceInfo : MonoBehaviour
                 PlayerPrefs.SetString("ProductName" + i, ProductName[i]);
                 PlayerPrefs.SetString("ProductCost" + i, ProductCost[i]);
                 PlayerPrefs.SetString("ProductDate" + i, ProductDate[i]);
+                PlayerPrefs.SetString("ProductPerson" + i, ProductPerson[i]);
             }
-
-
-
         }
     }
 
@@ -96,6 +92,6 @@ public class IntroduceInfo : MonoBehaviour
     {
         NameInput.text = "";
         CostInput.text = "";
-        DateInput.text = "";
+        DateInput.text = "(xx/yy/zzz)";
     }
 }

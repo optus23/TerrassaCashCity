@@ -108,9 +108,9 @@ public class MenuManager : MonoBehaviour
 
         if(this_month_is_payday)
         {
-            balance_youis.balance = PlayerPrefs.GetFloat("balance_youis", 5);
-            balance_alejandro.balance = PlayerPrefs.GetFloat("balance_alejandro", 5);
-            balance_marc.balance = PlayerPrefs.GetFloat("balance_marc", 5);
+            balance_youis.balance = PlayerPrefs.GetFloat("balance_youis");
+            balance_alejandro.balance = PlayerPrefs.GetFloat("balance_alejandro");
+            balance_marc.balance = PlayerPrefs.GetFloat("balance_marc");
             balance_youis.balance += 5;
             balance_alejandro.balance += 5;
             balance_marc.balance += 5;
@@ -123,24 +123,27 @@ public class MenuManager : MonoBehaviour
 
         if (SelectPerson.selected_person == "Youis")
         {
-            balance_youis.balance = PlayerPrefs.GetFloat("balance_youis", 5);
+            balance_youis.balance = PlayerPrefs.GetFloat("balance_youis");
             selected_balance = balance_youis.balance;
+            PlayerPrefs.SetFloat("balance_youis", balance_youis.balance);
         }
         else if (SelectPerson.selected_person == "Alejandro")
         {
-            balance_alejandro.balance = PlayerPrefs.GetFloat("balance_alejandro", 5);
+            balance_alejandro.balance = PlayerPrefs.GetFloat("balance_alejandro");
             selected_balance = balance_alejandro.balance;
+            PlayerPrefs.SetFloat("balance_alejandro", balance_alejandro.balance);
         }
         else if (SelectPerson.selected_person == "Marc")
         {
-            balance_marc.balance = PlayerPrefs.GetFloat("balance_marc", 5);
+            balance_marc.balance = PlayerPrefs.GetFloat("balance_marc");
             selected_balance = balance_marc.balance;
+            PlayerPrefs.SetFloat("balance_marc", balance_marc.balance);                        
         }
 
         //  Podium
-        balance_youis.balance = PlayerPrefs.GetFloat("balance_youis", 5);
-        balance_alejandro.balance = PlayerPrefs.GetFloat("balance_alejandro", 5);
-        balance_marc.balance = PlayerPrefs.GetFloat("balance_marc", 5);
+        balance_youis.balance = PlayerPrefs.GetFloat("balance_youis");
+        balance_alejandro.balance = PlayerPrefs.GetFloat("balance_alejandro");
+        balance_marc.balance = PlayerPrefs.GetFloat("balance_marc");
 
         if(balance_youis.balance > balance_alejandro.balance && balance_youis.balance > balance_marc.balance)
         {
@@ -179,6 +182,23 @@ public class MenuManager : MonoBehaviour
         podium_txt.text = ("Has to monetize next Payment: " + System.Environment.NewLine + "-" + actual_richer);
         trash_txt.text = ("Has to take out the Trash:  ") + System.Environment.NewLine + "-" + actual_trasher;
         cook_txt.text = ("Has to serve cooking:  ") + System.Environment.NewLine + "-" + actual_trasher;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown("q"))
+        {
+            balance_youis.balance++;
+        }
+        if (Input.GetKeyDown("w"))
+        {
+            balance_alejandro.balance++;
+        }
+        if (Input.GetKeyDown("e"))
+        {
+            balance_marc.balance++;
+        }
+
     }
 
     private bool CheckToRotateTrash(System.DateTime rotate_day)
