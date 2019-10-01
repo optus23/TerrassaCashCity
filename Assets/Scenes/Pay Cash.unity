@@ -610,6 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4619113bac3098d4bbe3fd75b1572a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected_balance: 0
   NameInput: {fileID: 565595444}
   CostInput: {fileID: 2043378578}
   DateInput: {fileID: 49389710}
@@ -1951,13 +1952,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2043378579}
   m_TextComponent: {fileID: 795837932}
   m_Placeholder: {fileID: 8415805}
-  m_ContentType: 0
+  m_ContentType: 3
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 2
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 2
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:

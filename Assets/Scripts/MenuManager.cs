@@ -10,17 +10,14 @@ public class MenuManager : MonoBehaviour
     public struct Balance_Youis
     {
         public float balance;
-        public bool is_trash;
     }
     public struct Balance_Alejandro
     {       
         public float balance;
-        public bool is_trash;
     }
     public struct Balance_Marc
     {      
         public float balance;
-        public bool is_trash;
     }
 
 
@@ -98,7 +95,7 @@ public class MenuManager : MonoBehaviour
         }
 
         //  Balance
-        next_month = PlayerPrefs.GetInt("next_month", current_time.NextMonth);
+        next_month = PlayerPrefs.GetInt("next_month", current_time.M);
         if (!this_month_is_payday && current_time.M == next_month)
         {
             next_month++;
