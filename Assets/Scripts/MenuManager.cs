@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿using Firebase;
+using Firebase.Database;
+using Firebase.Unity.Editor;
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -60,6 +64,13 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+
+        //DataBase from FireBase
+
+
+
+
+
         //  Transform actual day to int
         current_time.Year = System.DateTime.Now.Year.ToString();
         current_time.Month = System.DateTime.Now.Month.ToString();

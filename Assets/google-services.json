@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "579457518626",
+    "firebase_url": "https://terrassacashcity.firebaseio.com",
+    "project_id": "terrassacashcity",
+    "storage_bucket": "terrassacashcity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579457518626:android:c6f9ce85c740291e7ace7b",
+        "android_client_info": {
+          "package_name": "com.MarinelloBosch.TerrassaCashCity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579457518626-8ebe8nk23ofhfhmhrbvcpgc0af4b4kqa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrWLg8Ak0gnVl-AiyNoRYD29d65wBz1c8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579457518626-8ebe8nk23ofhfhmhrbvcpgc0af4b4kqa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
